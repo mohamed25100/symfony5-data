@@ -3,7 +3,8 @@ symfony5 data create using database guide
 
 ## ArticleController.php
 - part ( 1 <!-- @Route("/article", name="app_article") --> ) by default
-- part ( 2 <!-- @Route("/create-article", name="create_article") -->) by creating database
+- part ( 2 <!-- @Route("/create-article", name="create_article") -->) creating database
+- part ( 3 <!-- @Route("/article/{id}", name="article_show") --> ) show article/{id}
 ## objectif
 - create new article by:
 - setTitre
@@ -12,6 +13,8 @@ symfony5 data create using database guide
 - setDate
 
 ## Utilisation developpeur :
+### create article:
+
 - use App\Entity\Article;
 - use Doctrine\Persistence\ManagerRegistry;
 - public function createArticle(ManagerRegistry $doctrine): Response
@@ -21,6 +24,8 @@ symfony5 data create using database guide
 - $entityManager->persist($article);
 - $entityManager->flush();
 - return new Response('Saved new product with id '.$article->getId());
+### show artile/{id}
+- 
 ## CMD
 |  objectif     | CMD |
 |-----|-----|

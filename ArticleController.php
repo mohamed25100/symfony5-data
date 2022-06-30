@@ -44,4 +44,23 @@ class ArticleController extends AbstractController
 
         return new Response('Saved new product with id '.$article->getId());
     }
+    /**
+     * @Route("/article/{id}", name="article_show")
+     */
+    public function show(ManagerRegistry $doctrine, int $id): Response
+    {
+        $article = $doctrine->getRepository(Article::class)->find($id);
+
+        if (!$article) {
+            throw $this->createNotFoundException(
+                'No article found for id '.$id
+            );
+        }
+
+        //return new Response('Check out this great product: '.$article->getTitre());
+
+        // or render a template
+        // in the template, print things with {{ article.titre }}
+        return $this->render('article/show.html.twig', ['article' => $article]);
+    }
 }
