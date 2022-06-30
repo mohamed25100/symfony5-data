@@ -24,7 +24,7 @@ symfony5 data create using database guide
 - $entityManager->persist($article);
 - $entityManager->flush();
 - return new Response('Saved new product with id '.$article->getId());
-### show artile/{id}
+### show article/{id}
 - public function show(ManagerRegistry $doctrine, int $id): Response
 - $article = $doctrine->getRepository(Article::class)->find($id);
 - return $this->render('article/show.html.twig', ['article' => $article]);
