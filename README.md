@@ -21,3 +21,12 @@ symfony5 data create using database guide
 - $entityManager->persist($article);
 - $entityManager->flush();
 - return new Response('Saved new product with id '.$article->getId());
+## CMD
+| s | s | s | s | 
+|---|---|---|---|
+| s | s | s | s | 
+---------
+---------
+- php bin/console dbal:run-sql 'SELECT * FROM article'
+
+## [&copy;Mohamed BOUCHERBA](https://mohamed-boucherba.fr/)
